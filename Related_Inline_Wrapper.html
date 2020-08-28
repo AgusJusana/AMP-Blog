@@ -43,5 +43,7 @@ a:hover {color:#0379C4}
 function insertAfter(addition,target) {var parent = target.parentNode;if (parent.lastChild == target) {parent.appendChild(addition); } else {parent.insertBefore(addition,target.nextSibling);}
 }
 </script>
+<script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels&amp;max-results=5&quot;' type='text/javascript'/>
+<script type='text/javascript'> removeRelatedDuplicates(); printRelatedLabels(); </script>
 </body>
 </html>
