@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<style>
+*{margin:0px;padding:0px;}
+#app{padding:0 30px}
+.btn-circle{
+	width: 50px;
+	height: 50px;
+	padding: 10px 10px;
+	font-size: 30px;
+	line-height: 1.33;
+	border-radius: 25px;
+	color: #030;
+}
+.reactionContainer{display: flex}
+.button-squad{display: inline-flex;}
+.suka{font-size: 25px;padding: 12px;}
+.senang{font-size: 25px;padding: 12px;}
+.taksuka{font-size: 25px;padding: 12px;}
+</style>
+
+</head>
+<body>
+<div id="app">
+	<div class="reactionContainer">
+		<div class="button-squad">
+			<span class='suka'><button @click="likeIt"  type="button" class="btn btn-primary btn-circle"><i class="glyphicon glyphicon-thumbs-up"></i></button>[{{likes}}]</span>
+			<span class='senang'><button @click="loveIt"  type="button" class="btn btn-danger btn-circle"><i class="glyphicon glyphicon-heart"></i></button>[{{love}}]</span>
+			<span class='taksuka'><button @click="dislikeIt" type="button" class="btn btn-info btn-circle"><i class="glyphicon glyphicon-thumbs-down"></i></button>[{{dislikes}}]</span>
+		</div>			
+   </div>
+</div>  
+<script src="https://unpkg.com/vue@2.0.7/dist/vue.js"></script> 
+<script>
+	new Vue({
+		el:'#app',
+		data:{
+			isHidden:true,
+			likes:0,
+			love:0,
+			dislikes:0
+		},
+		methods:{
+			showIt:function(){
+				this.isHidden=false;
+			},
+			likeIt:function(){
+				this.likes++;
+			},
+			loveIt:function(){
+				this.love++;
+			},
+			dislikeIt:function(){
+				this.dislikes++;
+			}
+		}
+	});
+</script>
+</body>
+</html>
